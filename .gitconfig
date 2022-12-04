@@ -1,0 +1,62 @@
+# This is Git's per-user configuration file.
+
+# git config --global --edit
+# C:\Users\tiflti5\.gitconfig
+
+[core]
+  editor = "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+	preloadindex = true
+	fscache = true
+	autocrlf = true
+
+[user]
+	name = Dmitry
+
+[pull]
+  rebase = false
+
+[credential]
+  helper = manager
+  #helper = store
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
+
+[gc]
+	auto = 256
+
+[color]
+	ui = always
+
+[log]
+	date = short
+  
+[alias]
+	b = branch
+	c = commit
+	l = log --format='%Cred%h %Cgreen%ad %C(cyan)%aN% %C(yellow)%d%Creset %s'
+	la = log --all --format='%Cred%h %Cgreen%ad %C(cyan)%aN% %C(yellow)%d%Creset %s'
+	lg = log --graph --format='%Cred%h %Cgreen%ad %C(cyan)%aN% %C(yellow)%d%Creset %s'
+	lga = log --all --graph --format='%Cred%h %Cgreen%ad %C(cyan)%aN% %C(yellow)%d%Creset %s'
+	s = status
+	st = status -s
+	sw = switch
+  
+
+[push]
+	default = current
+
+[remote]
+	pushdefault = origin
+
+[diff]
+	tool = bc4
+
+[difftool "bc4"]
+	cmd = \"C:/Program Files/Beyond Compare 4/BCompare.exe\" \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+	prompt = false
